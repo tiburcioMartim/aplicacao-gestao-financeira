@@ -4,3 +4,19 @@ config/.env
 
 # Ignorar pastas de dependências (Composer)
 /vendor/
+composer.phar
+
+# Configurações de IDE e Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de Sistema (Windows/Mac)
+Thumbs.db
+.DS_Store
+
+# Logs e arquivos temporários
+*.log
+error_log
+tmp/
