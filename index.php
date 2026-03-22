@@ -13,10 +13,10 @@
     <?php
     // O $conn e a $_ENV já vem do bootstrap.php
     if (isset($conn) && !$conn->connect_error) {
-        echo "<p style='color: green;'>✅ Sucesso! Conectado ao banco: <strong>{$_ENV['DATABASE']}</strong></p>";
+        echo "<p style='color: green;'>✅ Sucesso! Conectado ao banco: <strong>" . ($_SERVER['DB_NAME'] ?? '---') . "</strong></p>";
         echo "<ul>";
-        echo "<li>Host: {$_ENV['HOSTNAME']}</li>";
-        echo "<li>Usuário: {$_ENV['USERNAME']}</li>";
+        echo "<li>Host: " . ($_SERVER['DB_HOST'] ?? '---') . "</li>";
+        echo "<li>Usuário: " . ($_SERVER['DB_USER'] ?? '---') . "</li>";
         echo "</ul>";
     } else {
         echo "<p style='color: red;'>❌ Erro ao conectar!</p>";

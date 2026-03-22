@@ -1,0 +1,16 @@
+{
+    "name": "martimtiburcio/projeto_gestao-financeira",
+    "autoload": {
+        "psr-4": {
+            "Martimtiburcio\\ProjetoGestaoFinanceira\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Martim Tiburcio"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

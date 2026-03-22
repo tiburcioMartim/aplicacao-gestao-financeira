@@ -2,5 +2,5 @@
 config/.env
 .env
 
-# Ignorar pastas de dependências (se usar composer)
+# Ignorar pastas de dependências (Composer)
 /vendor/

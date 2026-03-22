@@ -7,10 +7,11 @@ class Conn {
     private $mysqli = null;
 
     public function __construct() {
-        $this->host   = $_ENV['HOSTNAME'] ?? 'localhost';
-        $this->user   = $_ENV['USERNAME'] ?? 'root';
-        $this->pass   = $_ENV['PASSWORD'] ?? '';
-        $this->dbname = $_ENV['DATABASE'] ?? '';
+        // Usar nomes específicos (DB_...) para evitar conflito com variáveis do sistema
+        $this->host   = $_SERVER['DB_HOST'] ?? 'localhost';
+        $this->user   = $_SERVER['DB_USER'] ?? 'root';
+        $this->pass   = $_SERVER['DB_PASS'] ?? '';
+        $this->dbname = $_SERVER['DB_NAME'] ?? '';
 
         try {
             // Utilizando o driver MySQLi (Orientado a Objetos)
