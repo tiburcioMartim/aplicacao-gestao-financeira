@@ -1,0 +1,50 @@
+services:
+  app:
+    build: .
+    container_name: app_gestao
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - finance_net
+
+  db:
+    image: mysql:8.0
+    container_name: db_gestao
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mudar123
+      MYSQL_DATABASE: admin_gestaofinanceira
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - finance_net
+
+networks:
+  finance_net:
+
+
+volumes:
+  db_data:
+
+
+# Para subir os containers: o docker desktop deve estar aberto e rodando
+# No terminal, navegue até a pasta do projeto e execute o comando: docker-compose up -d
+# Para parar os containers: docker-compose down
+# Para remover os containers e os volumes: docker-compose down -v
+
+
+# Para conseguir acessar corretamente pelo SGBD DBeaver:
+# Host: localhost
+# Porta: 3306
+# Usuário: root
+# Senha: mudar123
+# Banco de dados: admin_gestaofinanceira
+# acessar: Driver properties -> allowPublicKeyRetrieval = true
+
+# O docker-compose.yml deve biuldar corretamente com as credenciais acima caso contrario não irá conectar.

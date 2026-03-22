@@ -1,5 +1,6 @@
-config
+# Ignorar apenas o arquivo com senhas reais no projeto
+config/.env
 .env
-docker-compose.yml
-Dockerfile
-documentations/
+
+# Ignorar pastas de dependências (se usar composer)
+/vendor/
